@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="cuatro">
+        <h2 v-html="nombres"></h2>
+         
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">Edad</th>
+                  <th scope="col">Carrera</th>
+                  <th scope="col">Codigo</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <td v-html="primernombre"></td>
+                  <td v-html="primeredad"></td>
+                  <td v-html="primercarrera"></td>
+                  <td v-html="primercodigo"></td>
+                <tr>
+                    <td v-html="segundonombre"></td>
+                  <td v-html="segundoedad"></td>
+                  <td v-html="segundocarrera"></td>
+                  <td v-html="segundocodigo"></td>
+                </tr>
+                  
+              </tbody>
+        </table>
+
+        <div>
+            <h2>Mascotas</h2>
+            <ul>
+                <li v-for="(item) in items">
+                    <label>{{ item.text}}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+   
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ <script>
+       var nb = new Vue({
+            el: '#cuatro',
+            data:{
+                nombres:"<h2><i>Hector Antonio torrez Buruca. Joel cristopher turcios turcios</i></h2>",
+                primernombre:"<i><p class='bg-dark text-white'>Hector Antonio Torrez Buruca</P></i>",
+                 primeredad:"<p class='bg-dark text-white'>22</P>",
+                primercarrera:"<p class='bg-dark text-white'>Ing.En Sistemas</P>",
+                primercodigo:"<p class='bg-dark text-white'>SMIS080319</P>",
+
+                    //segundo integrante
+                    segundonombre:"<p>Joel cristopher  turcios turcios</p>",
+                    segundoedad:"<p>20</p>",
+                    segundocarrera:"<p>Ing. En Sistemas</p>",
+                    segundocodigo:"<p>SMIS020521</p>",
+
+
+                    //ul
+                    items:[
+                    {text:"Nombre: Jaca. Edad:10 años"}, 
+                    {text:"Nombre: Vepo Edad:5 años"},
+                    {text:"Nombre: Misi Edad:1 año"}
+                    ]
+            }
+        });
+    </script>
+
+
+</body>
+</html>
